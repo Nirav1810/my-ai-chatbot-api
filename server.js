@@ -25,12 +25,11 @@ if (!MONGODB_URI) {
 // Initialize OpenAI client, pointing to OpenRouter's base URL
 // OpenRouter's API is designed to be compatible with OpenAI's SDK
 const openai = new OpenAI({
-    baseURL: "https://openrouter.ai/api/v1", // <-- THIS IS THE KEY CHANGE FOR OPENROUTER
+    baseURL: "https://openrouter.ai/api/v1",
     apiKey: OPENROUTER_API_KEY,
-    // Optional: Add headers for OpenRouter to track your app for leaderboards/analytics
     defaultHeaders: {
-        "HTTP-Referer": "https://your-vercel-frontend-url.vercel.app", // IMPORTANT: Replace with your actual Vercel URL later
-        "X-Title": "My AI Chatbot App", // Your app title
+        "HTTP-Referer": "https://my-ai-chatbot-app.vercel.app", // <--- UPDATE THIS LINE WITH YOUR ACTUAL VERCEL URL
+        "X-Title": "My AI Chatbot App",
     },
 });
 
@@ -39,7 +38,8 @@ const openai = new OpenAI({
 // During local development, allow localhost:5173
 // After Vercel deployment, add your Vercel URL here.
 const allowedOrigins = [
-    'http://localhost:5173', // For local frontend development
+    'http://localhost:5173',
+    'https://my-ai-chatbot-app.vercel.app', // For local frontend development
     // IMPORTANT: Add your Vercel frontend URL here after deployment (e.g., 'https://your-frontend-name.vercel.app')
     // Example: 'https://my-ai-chatbot-app.vercel.app'
     // If Vercel generates preview URLs, you might need a regex pattern like:
