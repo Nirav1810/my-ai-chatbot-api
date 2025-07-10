@@ -26,7 +26,7 @@ if (!MONGODB_URI) {
 // OpenRouter's API is designed to be compatible with OpenAI's SDK
 const openai = new OpenAI({
     baseURL: "https://openrouter.ai/api/v1",
-    apiKey: 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,
+    apiKey: OPENROUTER_API_KEY,
     defaultHeaders: {
         "HTTP-Referer": "https://my-ai-chatbot-app.vercel.app", // <--- UPDATE THIS LINE WITH YOUR ACTUAL VERCEL URL
         "X-Title": "My AI Chatbot App",
